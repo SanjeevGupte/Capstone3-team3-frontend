@@ -1,14 +1,12 @@
 import Header from "../../components/header/Header";
-import Slideshow from "../../components/slideshow/Slideshow";
-import GridCards from "../../components/gridcards/GridCards";
+import Hero from "../../components/hero/Hero";
 import { isAuthenticated } from "../../utils/authHelper";
 
 function Agent(props) {
   return (
     <div className="Home">
         <Header isAuthenticated={isAuthenticated()} />
-        <Slideshow/>
-        <GridCards/>
+        <Hero />
     </div>
   );
 }
