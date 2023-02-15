@@ -8,7 +8,7 @@ function Header(props) {
   return (
     <div className="Navbar mb-3">
       <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-        <Navbar.Brand as={Link} to="/">Capstone React FE</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Capstone React Insurance Shop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav activeKey={props.location.pathname} className="ml-auto">
