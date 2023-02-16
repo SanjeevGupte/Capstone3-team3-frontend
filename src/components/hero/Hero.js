@@ -4,8 +4,27 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
 import img from './hero_image1.png'
+import React, { Component } from "react";
 
-function Hero(props) {
+export class Hero extends Component {
+
+    state = {
+        errorMessage: null,
+        success: false,
+        formData: {
+            state: ""
+        }
+    }
+
+    handleChange = (event) => {
+        let formData = { ...this.state.formData };
+        formData[event.target.id] = event.target.value;
+        this.setState({ formData });
+        console.log("handle change happening")
+        console.log(event.target.value)
+    }
+
+render() {
 
     return (
         <Jumbotron fluid>
@@ -31,7 +50,7 @@ function Hero(props) {
                 <Row className="justify-content-center">
                     <div>
                         <label for="states">Choose a State:</label>
-                        <select onChange= "handleChange" name="State" id="state">
+                        <select onChange= {this.handleChange} name="State" id="state">
                             <option value="">Select</option>
                             <option value="MA">Massachusetts</option>
                             <option value="NH">New Hampshire</option>
@@ -45,6 +64,6 @@ function Hero(props) {
 
     )
 }
-
+}
 
 export default Hero;

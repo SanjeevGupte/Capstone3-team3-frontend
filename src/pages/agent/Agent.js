@@ -23,31 +23,6 @@ class Login extends Component {
 
     client = new AuthService();
 
-    handleChange = (event) => {
-        let formData = { ...this.state.formData };
-        formData[event.target.id] = event.target.value;
-        this.setState({ formData });
-        console.log("handle change happening")
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        this.client.login(this.state.formData).then((response) => {
-            // handle success
-            localStorage.setItem('auth',
-                JSON.stringify({
-                    token: response.data.token,
-                    email: response.data.email
-                })
-            );
-            this.props.actions.login(response.data)
-            this.setState({ success: true })
-        })
-            .catch((error) => {
-                this.setState({ errorMessage: "Invalid Username/Password Combination" })
-            })
-    }
-
     render() {
         const params = new URLSearchParams(this.props.location.search);
         const flashMessage = params.get('message');
@@ -60,8 +35,7 @@ class Login extends Component {
 
             <div className="Home">
                     <Header isAuthenticated={isAuthenticated()} />
-                    <Hero 
-                       handleChange={this.handleChange} />
+                    <Hero/>
                 </div>
 
             </div>
