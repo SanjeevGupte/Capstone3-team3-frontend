@@ -6,6 +6,9 @@ import Image from 'react-bootstrap/Image'
 import img from './hero_image1.png'
 import React, { Component } from "react";
 
+import * as authActions from "../../redux/actions/customAPI";
+import APIService from "../../apiService";
+
 export class Hero extends Component {
 
     state = {
@@ -16,41 +19,50 @@ export class Hero extends Component {
         }
     }
 
+    client = new APIService();
+
     handleChange = (event) => {
         let formData = { ...this.state.formData };
         formData[event.target.id] = event.target.value;
         this.setState({ formData });
         console.log("handle change happening")
         console.log(event.target.value)
+        //This calls the API getAgent with the state; The response has the data 
+        this.client.findAgent(this.state.formData).then((response) => {
+            console.log(response)
+            // Call API 
+            
+        })
     }
+            
 
 render() {
 
-    return (
+                return(
         <Jumbotron fluid>
             <Container>
-                <Row> 
+                <Row>
                     <Col>
                         <h1>Find a local agent</h1>
                         <p>
-                        ESS Insurance Agency is the largest Personal Lines agency in the U.S. by
-                        premium with over 2,000 local agents and 180 offices. ESS is owned by
-                        ESS Investment Group, a Fortune 25 company.
+                            ESS Insurance Agency is the largest Personal Lines agency in the U.S. by
+                            premium with over 2,000 local agents and 180 offices. ESS is owned by
+                            ESS Investment Group, a Fortune 25 company.
                         </p>
                     </Col>
                     <Col >
-                        
+
                         <Image
-                                className="d-block w-50 h-75 float-right"
-                                src= {img}
-                                alt="hero image"
-                            />
+                            className="d-block w-50 h-75 float-right"
+                            src={img}
+                            alt="hero image"
+                        />
                     </Col>
                 </Row>
                 <Row className="justify-content-center">
                     <div>
                         <label for="states">Choose a State:</label>
-                        <select onChange= {this.handleChange} name="State" id="state">
+                        <select onChange={this.handleChange} name="State" id="state">
                             <option value="">Select</option>
                             <option value="MA">Massachusetts</option>
                             <option value="NH">New Hampshire</option>
@@ -60,10 +72,10 @@ render() {
                     </div>
                 </Row>
             </Container>
-        </Jumbotron>
+        </Jumbotron >
 
     )
-}
+        }
 }
 
 export default Hero;
