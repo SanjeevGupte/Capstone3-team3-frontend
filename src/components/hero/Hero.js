@@ -7,7 +7,6 @@ import img from './hero_image1.png'
 
 function Hero(props) {
 
-
     return (
         <Jumbotron fluid>
             <Container>
@@ -32,7 +31,7 @@ function Hero(props) {
                 <Row className="justify-content-center">
                     <div>
                         <label for="states">Choose a State:</label>
-                        <select name="State" id="state">
+                        <select onChange= "handleChange" name="State" id="state">
                             <option value="">Select</option>
                             <option value="MA">Massachusetts</option>
                             <option value="NH">New Hampshire</option>
