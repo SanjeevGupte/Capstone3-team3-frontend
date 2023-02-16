@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
+import Card from 'react-bootstrap/Card'
 import img from './hero_image1.png'
 import React, { Component } from "react";
 
@@ -32,17 +33,21 @@ export class Hero extends Component {
             console.log(response)
             // Call API 
             // handle success
-            localStorage.setItem('agentcards',
-                JSON.stringify({
-                    Title: response.data.Title,
-                    email: response.data.email,
-                    firstName: response.data.firstName,
-                    lastName: response.data.lastName,
-                    phoneNumber: response.data.phoneNumber,
-                    profileImage: response.data.profileImage
-                })
-                );
-                console.log("Card Data " + localStorage.getItem('agentcards'))
+            // localStorage.setItem('agentcards',
+            //     JSON.stringify({
+            //         Title: response.data.Title,
+            //         email: response.data.email,
+            //         firstName: response.data.firstName,
+            //         lastName: response.data.lastName,
+            //         phoneNumber: response.data.phoneNumber,
+            //         profileImage: response.data.profileImage
+            //     })
+            //     );
+                console.log("Card Data " + response.data)
+
+
+
+               
         })
     }
             
@@ -83,7 +88,18 @@ render() {
                     </div>
                 </Row>
             </Container>
-        </Jumbotron >
+            <Container>
+            <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src="holder.js/100px180" />
+  <Card.Body>
+    <Card.Title>Agent</Card.Title>
+    <Card.Text>
+      phoneNumber : 
+    </Card.Text>
+  </Card.Body>
+</Card>
+            </Container>
+        </Jumbotron>
 
     )
         }
