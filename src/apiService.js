@@ -8,7 +8,8 @@ class CustomAPIService {
     }
 
     findAgent(state) {
-        return this.client.get(`${this.url}/api/agents`, state);
+        console.log ("State :" + state)
+        return this.client.get(`${this.url}/api/agents/${state}`);
     }
 }
 

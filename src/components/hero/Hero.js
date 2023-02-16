@@ -28,10 +28,21 @@ export class Hero extends Component {
         console.log("handle change happening")
         console.log(event.target.value)
         //This calls the API getAgent with the state; The response has the data 
-        this.client.findAgent(this.state.formData).then((response) => {
+            this.client.findAgent(event.target.value).then((response) => {
             console.log(response)
             // Call API 
-            
+            // handle success
+            localStorage.setItem('agentcards',
+                JSON.stringify({
+                    Title: response.data.Title,
+                    email: response.data.email,
+                    firstName: response.data.firstName,
+                    lastName: response.data.lastName,
+                    phoneNumber: response.data.phoneNumber,
+                    profileImage: response.data.profileImage
+                })
+                );
+                console.log("Card Data " + localStorage.getItem('agentcards'))
         })
     }
             
