@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
-import Card from 'react-bootstrap/Card'
 import img from './hero_image1.png'
 import React, { Component } from "react";
 
@@ -84,8 +83,8 @@ render() {
                     </div>
                 </Row>
             </Container>
+            <GridCards dataFromParent = {this.state.agentData}/>
         </Jumbotron >
-
     )
         }
 }
