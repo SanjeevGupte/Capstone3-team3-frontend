@@ -10,6 +10,7 @@ import { Redirect, withRouter } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Hero from "../../components/hero/Hero";
 import { isAuthenticated } from "../../utils/authHelper";
+import GridCards from "../../components/gridcards/GridCards";
 
 class Login extends Component {
 
@@ -26,17 +27,14 @@ class Login extends Component {
     render() {
         const params = new URLSearchParams(this.props.location.search);
         const flashMessage = params.get('message');
-        // if (this.state.success) {
-        //     const redirect = params.get('redirect');
-        //     return <Redirect to={(redirect) ? redirect : "/home"} />
-        // }
+
         return (
             <div className="AgentForm">
 
             <div className="Home">
                     <Header isAuthenticated={isAuthenticated()} />
                     <Hero/>
-                </div>
+            </div>
 
             </div>
         )

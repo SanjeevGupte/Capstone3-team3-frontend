@@ -8,16 +8,20 @@ import React, { Component } from "react";
 
 import * as authActions from "../../redux/actions/customAPI";
 import APIService from "../../apiService";
+import GridCards from '../gridcards/GridCards';
 
 export class Hero extends Component {
 
-    state = {
-        errorMessage: null,
-        success: false,
-        formData: {
-            state: ""
+    constructor(props) {
+        super(props);
+        this.state = { 
+            formData: {
+                state: ""
+            },
+            agentData: []
         }
     }
+
 
     client = new APIService();
 
@@ -29,27 +33,23 @@ export class Hero extends Component {
         console.log(event.target.value)
         //This calls the API getAgent with the state; The response has the data 
             this.client.findAgent(event.target.value).then((response) => {
-            console.log(response)
-            // Call API 
-            // handle success
-            localStorage.setItem('agentcards',
-                JSON.stringify({
-                    Title: response.data.Title,
-                    email: response.data.email,
-                    firstName: response.data.firstName,
-                    lastName: response.data.lastName,
-                    phoneNumber: response.data.phoneNumber,
-                    profileImage: response.data.profileImage
-                })
-                );
-                console.log("Card Data " + localStorage.getItem('agentcards'))
+                console.log(response.data)
+                // let agentData = { ...this.state.agentData };
+                let agentData = response.data
+                this.setState({agentData})
+                console.log(agentData)
+
+                // console.log("Card Data " + localStorage.getItem('agentcards'))
+                // response.data.map((agentdata,index) => 
+                //     console.log(index + " = " + agentdata.lastName));
+
         })
     }
             
 
 render() {
 
-                return(
+    return(
         <Jumbotron fluid>
             <Container>
                 <Row>
@@ -83,8 +83,8 @@ render() {
                     </div>
                 </Row>
             </Container>
+            <GridCards dataFromParent = {this.state.agentData}/>
         </Jumbotron >
-
     )
         }
 }

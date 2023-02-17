@@ -8,7 +8,6 @@ function Home(props) {
     <div className="Home">
         <Header isAuthenticated={isAuthenticated()} />
         <Slideshow/>
-        <GridCards/>
     </div>
   );
 }
