@@ -9,11 +9,14 @@ function GridCards({dataFromParent}) {
             <Row xs={1} lg={2} className="g-4">
                 {dataFromParent.map((_, idx) => (
                     <Col key={idx}>
-                        <Card>
-                            <Card.Img variant="top" src={dataFromParent[idx].profileImage.data} />
+                        <Card border='dark'>
+                            <Card.Img variant="top"
+                            src={dataFromParent[idx].profileImage}
+                            style = {{width:100, height: 150}}/>
                             <Card.Body>
                                 <Card.Title>{dataFromParent[idx].firstName} {dataFromParent[idx].lastName}</Card.Title>
                                 <Card.Subtitle>{dataFromParent[idx].Title} </Card.Subtitle>
+                                <br></br>
                                 <Card.Text> 
                                     <p>E-Mail: {dataFromParent[idx].email} </p>
                                     <p>Phone Number: {dataFromParent[idx].phoneNumber} </p>
@@ -21,10 +24,13 @@ function GridCards({dataFromParent}) {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
+                        <br></br>
                     </Col>
+                    
                 ))}
             </Row>
         </div>
+        
     );
 }
 

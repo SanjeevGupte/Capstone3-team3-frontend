@@ -50,6 +50,7 @@ export class Hero extends Component {
 render() {
 
     return(
+        <Container>
         <Jumbotron fluid>
             <Container>
                 <Row>
@@ -79,12 +80,18 @@ render() {
                             <option value="NH">New Hampshire</option>
                             <option value="CT">Connecticut</option>
                             <option value="ME">Maine</option>
+                            <option value="VT">Vermont</option>
+                            <option value="RI">Rhode Island</option>
                         </select>
                     </div>
                 </Row>
             </Container>
-            <GridCards dataFromParent = {this.state.agentData}/>
         </Jumbotron >
+        <GridCards dataFromParent = {this.state.agentData}/>
+        </Container>
+
+
+
     )
         }
 }
