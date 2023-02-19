@@ -3,12 +3,24 @@ import Nav from 'react-bootstrap/Nav';
 import { Link, withRouter } from 'react-router-dom';
 import UserNav from './UserNav';
 
+import logo from './logo.PNG'; // Tell Webpack this JS file uses this image
+
 function Header(props) {
 
   return (
     <div className="Navbar mb-3">
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-        <Navbar.Brand as={Link} to="/">Capstone React Insurance Shop</Navbar.Brand>
+      <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
+         
+         <Navbar.Brand href="#home">
+      <img
+        alt=""
+        src={logo}
+        width="30"
+        height="30"
+        className="d-inline-block align-top"
+      />{' '}
+      Capstone React Insurance Shop
+    </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav activeKey={props.location.pathname} className="ml-auto">

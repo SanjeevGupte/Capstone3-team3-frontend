@@ -1,41 +1,47 @@
 import Carousel from 'react-bootstrap/Carousel';
 
+
+import slide1 from './insurance1.PNG'; // Tell Webpack this JS file uses this image
+import slide2 from './insurance2.PNG'; // Tell Webpack this JS file uses this image
+import slide3 from './insurance3.PNG'; // Tell Webpack this JS file uses this image
+
 function Slideshow(props) {
 
     return (
         <div className="Slideshow container mb-3">
             <Carousel variant="dark">
-                <Carousel.Item>
+
+                <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src="https://via.placeholder.com/800x400"
+                        src={slide1}
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h5>Proud to offer insurances for all needs</h5>
+                        <p>Easy to use , proud and Trusted company.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src="https://via.placeholder.com/800x400"
+                        src={slide2}
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h5>Easiest way to get the insurance</h5>
+                        <p>Discuss with our agents</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src="https://via.placeholder.com/800x400"
+                        src={slide3}
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h5>Talk with our Agents</h5>
+                        <p>Check your needs and Talk to our agents</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
