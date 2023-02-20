@@ -6,7 +6,7 @@ function GridCards({dataFromParent}) {
     console.log(dataFromParent)
     return (
         <div data-testid="gridContainer" className="GridCards container mb-3">
-            <Row xs={1} lg={2} className="g-4">
+            <Row xs={1} lg={2} className="g-4" >
                 {dataFromParent.map((_, idx) => (
                     <Col key={idx}>
                         <Card border='dark'>
