@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Alert from 'react-bootstrap/Alert';
 
 import { connect } from "react-redux";
 import * as authActions from "../../redux/actions/auth";
