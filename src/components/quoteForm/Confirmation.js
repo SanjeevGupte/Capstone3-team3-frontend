@@ -13,12 +13,18 @@ class Confirmation extends Component{
         this.props.nextStep();
     };
 
+    createQuote = (e) => {
+        console.log("Creating Quote")
+        console.log()
+        this.client.createQuote(this.state.inputValues)
+    }
+
     render(){
         const {inputValues: { firstName, lastName, email, address, city, state, zip }} = this.props;
-
+        console.log({inputValues: { firstName, lastName, email, address, city, state, zip }})
         return(
             <Container>
-                <h1>Confirm your Details</h1>
+                <h1 class="text-center">Get a Quote</h1>
                 <p>Confirm if the following details are correct.</p>
                 <p>First Name: {firstName}</p>
                 <p>Last Name: {lastName}</p>
@@ -28,7 +34,7 @@ class Confirmation extends Component{
                 <p>State: {state}</p>
                 <p>Zip: {zip}</p>
                 <Button variant="secondary" onClick={this.back}>Back</Button>{' '}
-                <Button variant="primary">Confirm</Button>
+                <Button variant="primary" onClick = {this.createQuote}>Confirm</Button>
             </Container>
         )
     }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import UserDetails from "./UserDetails";
 import AddressDetails from "./AddressDetails";
 import Confirmation from "./Confirmation";
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
+import APIService from "../../apiService";
 
 class MultiStepForm extends Component {
     state = {
@@ -15,6 +16,8 @@ class MultiStepForm extends Component {
         state: '',
         zip:'',
     }
+
+    client = new APIService();
 
     nextStep = () => {
         const { step } = this.state

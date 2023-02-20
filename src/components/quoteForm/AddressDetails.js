@@ -17,6 +17,7 @@ class AddressDetails extends Component{
 
     render() {
         return( <Container>
+            <h1 class="text-center">Get a Quote</h1>
                     <Form>
                         <Form.Group controlId="formAddress">
                             <Form.Label>Address</Form.Label>

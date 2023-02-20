@@ -17,6 +17,7 @@ class UserDetails extends Component{
 
     render() {
         return( <Container>
+            <h1 class="text-center">Get a Quote</h1>
                     <Form>
                         <Form.Row>
                             <Form.Group as={Col} controlId="formFirstName">

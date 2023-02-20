@@ -11,6 +11,11 @@ class CustomAPIService {
         console.log ("State :" + state)
         return this.client.get(`${this.url}/api/agents/${state}`);
     }
+
+    createQuote() {
+        console.log ("Creating Quote..")
+        return this.client.post(`${this.url}/api/quotes/`);
+    }
 }
 
 export default CustomAPIService;
