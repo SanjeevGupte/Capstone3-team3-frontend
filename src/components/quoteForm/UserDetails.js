@@ -17,7 +17,7 @@ class UserDetails extends Component{
 
     render() {
         return( <Container>
-            <h1 class="text-center">Get a Quote</h1>
+            <h1 classname="text-center">Get a Quote</h1>
                     <Form>
                         <Form.Row>
                             <Form.Group as={Col} controlId="formFirstName">
@@ -53,7 +53,6 @@ class UserDetails extends Component{
                             onChange={this.props.handleChange}
                             />
                         </Form.Group>
-
                         <Button variant="primary" onClick={this.saveAndContinue}>Next</Button>
                     </Form>
                 </Container>

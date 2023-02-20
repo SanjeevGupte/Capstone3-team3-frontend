@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Button, Container } from 'react-bootstrap';
+import APIService from "../../apiService";
 
 class Confirmation extends Component{
+
+    client = new APIService();
 
     back  = (e) => {
         e.preventDefault();
@@ -15,16 +18,24 @@ class Confirmation extends Component{
 
     createQuote = (e) => {
         console.log("Creating Quote")
-        console.log()
-        this.client.createQuote(this.state.inputValues)
+        this.client.createQuote({
+                                "firstName": "Sean",
+                                "lastName": "Peterson",
+                                "email": "test@test.com",
+                                "Address": "testing",
+                                "age": 30,
+                                "LOB" : "AUTO",
+                                "VIN": "E-CAR"
+                                }) 
     }
 
     render(){
         const {inputValues: { firstName, lastName, email, address, city, state, zip }} = this.props;
         console.log({inputValues: { firstName, lastName, email, address, city, state, zip }})
+        console.log(firstName)
         return(
             <Container>
-                <h1 class="text-center">Get a Quote</h1>
+                <h1 classname="text-center">Get a Quote</h1>
                 <p>Confirm if the following details are correct.</p>
                 <p>First Name: {firstName}</p>
                 <p>Last Name: {lastName}</p>
