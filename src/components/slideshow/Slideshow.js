@@ -1,51 +1,52 @@
-import Carousel from 'react-bootstrap/Carousel';
-
-
-import slide1 from './insurance1.PNG'; // Tell Webpack this JS file uses this image
-import slide2 from './insurance2.PNG'; // Tell Webpack this JS file uses this image
-import slide3 from './insurance3.PNG'; // Tell Webpack this JS file uses this image
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import { Form, Button, Col, Container, Row, Image } from 'react-bootstrap';
+import img from './hero_image1.png';
+import { Link } from 'react-router-dom';
 
 function Slideshow(props) {
 
     return (
-        <div className="Slideshow container mb-3">
-            <Carousel variant="dark">
+        <Container>
+            <Jumbotron>
+                <Row >
+                    <Col>
+                        <h1> Expert Insurance Advice from a member of your local community </h1>
 
-                <Carousel.Item interval={1000}>
-                    <img
-                        className="d-block w-100"
-                        src={slide1}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h5>Proud to offer insurances for all needs</h5>
-                        <p>Easy to use , proud and Trusted company.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item interval={1000}>
-                    <img
-                        className="d-block w-100"
-                        src={slide2}
-                        alt="Second slide"
-                    />
-                    <Carousel.Caption>
-                        <h5>Easiest way to get the insurance</h5>
-                        <p>Discuss with our agents</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item interval={1000}>
-                    <img
-                        className="d-block w-100"
-                        src={slide3}
-                        alt="Third slide"
-                    />
-                    <Carousel.Caption>
-                        <h5>Talk with our Agents</h5>
-                        <p>Check your needs and Talk to our agents</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </div>
+                        <p> Talk to a local agent near you or start a quote online.</p>
+
+                        <Link to="/agent"> <Button>Find an Agent</Button></Link>
+                        <Link to="/quote"> <Button>Get Quote</Button></Link>
+                    </Col>
+                    <Col md="auto" >
+                        <Image className="d-block w-100 h-75 justify-content-md-center"
+                            src={img}
+                            alt="hero image" />
+                    </Col>
+                </Row>
+            </Jumbotron>
+            <Container>
+                <Row>
+                    <Col>
+                        <h2> What is ESS Insurance</h2>
+                    </Col>
+                    <Col>
+                        <p>We know you want affordable choices when it comes to insurance. Comparion agents can
+                            quote trusted national and regional insurance partners with products that cover your
+                            family, income and assets like a home, car, boat or jewelry. Our local agents are in
+                            your community and can guide you through the complex process of finding the right insurance
+                            coverage.</p>
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
+                <Row>
+                    <h3> Types of insurance we offer - need to center </h3>
+                </Row>
+                <Row>
+                    <p> Lines of Business - find icons?</p>
+                </Row>
+            </Container>
+        </Container>
     );
 }
 
