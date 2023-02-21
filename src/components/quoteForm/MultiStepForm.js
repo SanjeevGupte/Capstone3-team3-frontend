@@ -13,10 +13,12 @@ class MultiStepForm extends Component {
         lastName: '',
         email: '',
         address: '',
+        lob: 'AUTO',
+        age: 18,
         city: '',
-        state: '',
+        state: 'MA',
         zip: '',
-        premium: Math.floor(Math.random() * 200) + 100
+        premium: Math.floor(Math.random() * 600) + 100
     }
 
     client = new APIService();
@@ -40,8 +42,8 @@ class MultiStepForm extends Component {
     }
 
     render() {
-        const { step, firstName, lastName, email, address, city, state, zip ,premium} = this.state;
-        const inputValues = { firstName, lastName, email, address, city, state, zip ,premium};
+        const { step, firstName, lastName, email, lob,age,address, city, state, zip ,premium} = this.state;
+        const inputValues = { firstName, lastName, email, lob,age,address, city, state, zip ,premium};
 
         switch (step) {
             case 1:

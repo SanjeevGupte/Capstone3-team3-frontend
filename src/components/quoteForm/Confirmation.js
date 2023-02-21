@@ -27,8 +27,8 @@ class Confirmation extends Component{
                         "City" :this.props.inputValues.city,
                         "State":this.props.inputValues.state,
                         "Zipcode": this.props.inputValues.zip,
-                        "age": 30,
-                        "LOB" : "AUTO",
+                        "age": this.props.inputValues.age,
+                        "LOB" : this.props.inputValues.lob,
                         "Premium" : this.props.inputValues.premium
                         }) 
         console.log("quote created")
@@ -36,8 +36,8 @@ class Confirmation extends Component{
     }
 
     render(){
-        const {inputValues: { firstName, lastName, email, address, city, state, zip ,premium}} = this.props;
-        console.log(firstName, lastName, email, address, city, state, zip) ;
+        const {inputValues: { firstName, lastName, email, lob,age,address, city, state, zip ,premium}} = this.props;
+        console.log(firstName, lastName, email, lob,age,address, city, state, zip) ;
         return(
             <Container>
                 <h1 classname="text-center">Get a Quote</h1>
@@ -45,10 +45,12 @@ class Confirmation extends Component{
                 <p>First Name: {firstName}</p>
                 <p>Last Name: {lastName}</p>
                 <p>Email: {email}</p>
+                <p>Age: {age}</p>
                 <p>Adress: {address}</p>
                 <p>City: {city}</p>
                 <p>State: {state}</p>
                 <p>Zip: {zip}</p>
+                <p>LOB: {lob}</p>
                 <Button variant="secondary" onClick={this.back}>Back</Button>{' '}
                 <Button variant="primary" onClick = {this.createQuote}>Confirm</Button>
             </Container>

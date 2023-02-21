@@ -6,8 +6,8 @@ class QuotePresent extends Component{
     
     
     render(){
-        const {inputValues: { firstName, lastName, email, address, city, state, zip ,premium}} = this.props;
-        console.log(firstName, lastName, email, address, city, state, zip,premium);
+        const {inputValues: { firstName, lastName, email, lob,age,address, city, state, zip ,premium}} = this.props;
+        console.log(firstName, lastName, email, lob,age,address, city, state, zip,premium);
         return(
             <Container>
                 
@@ -15,6 +15,8 @@ class QuotePresent extends Component{
                 <p>First Name: {firstName}</p>
                 <p>Last Name: {lastName}</p>
                 <p>Email: {email}</p>
+                <p>Age: {age}</p>
+                <p>LOB: {lob}</p>
                 <p>Adress: {address}</p>
                 <p>City: {city}</p>
                 <p>State: {state}</p>
