@@ -51,7 +51,7 @@ render() {
 
     return(
         <Container>
-        <Jumbotron fluid>
+        <Jumbotron fluid style={{ padding: '1rem' }}>
             <Container>
                 <Row>
                     <Col>

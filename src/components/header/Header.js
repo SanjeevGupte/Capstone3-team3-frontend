@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Link, withRouter } from 'react-router-dom';
 import UserNav from './UserNav';
 
-import logo from './logo.PNG'; // Tell Webpack this JS file uses this image
+import logo from './capstone_logo.png'; // Tell Webpack this JS file uses this image
 
 function Header(props) {
 
@@ -19,7 +19,7 @@ function Header(props) {
         height="30"
         className="d-inline-block align-top"
       />{' '}
-      Capstone React Insurance Shop
+      ESS Insurance
     </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

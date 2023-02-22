@@ -28,7 +28,7 @@ function UserNav(props) {
   let userNav = (
     <>
       <Navbar.Text className="font-weight-bold mx-3">
-        Welcome, Guest Please Log In
+        Welcome, Guest
       </Navbar.Text>
       <Nav.Link as={Link} to="/home" href="/home">Home</Nav.Link>
       <Nav.Link as={Link} to="/agent" href="/agent">Agents</Nav.Link>
