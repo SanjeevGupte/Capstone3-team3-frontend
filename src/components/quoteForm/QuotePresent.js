@@ -20,7 +20,7 @@ class QuotePresent extends Component {
         return (
             <Container>
                 <Jumbotron style={{ padding: '1rem' }}>
-                    <p><h1 class="p-3 mb-2 bg-primary text-dark text-center">Your Quote with the Premium is ${premium}</h1></p>
+                    <p><h1 class="p-3 mb-2 bg-primary text-light text-center">Your Quote with the Premium is ${premium}</h1></p>
                     <Form >
 
                         <Form.Row>
@@ -109,7 +109,7 @@ class QuotePresent extends Component {
 
                 <Container className="text-center">
                 <CardColumns >
-                    <Card border="primary" style={{ width: "18rem" }} >
+                    <Card border="primary" >
                         <Card.Body>
                             <Row className="align-items-center">
                                 <Col>

@@ -42,8 +42,8 @@ class Confirmation extends Component {
         return (
             <Container>
                 <Jumbotron style={{ padding: '1rem' }}>
-                    <h1 class="p-3 mb-2 bg-primary text-dark text-center">  Get a Quote</h1>
-                    <p class="p-3 mb-2 bg-info text-white text-center">Confirm if the following details are correct.</p>
+                    <h1 class="p-3 mb-2 bg-primary text-light text-center">  Get a Quote</h1>
+                    <p class="p-3 mb-2 bg-light text-dark text-center">Confirm if the following details are correct.</p>
 
                     <Form >
 
