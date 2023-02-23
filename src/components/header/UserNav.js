@@ -32,7 +32,7 @@ function UserNav(props) {
       </Navbar.Text>
       <Nav.Link as={Link} to="/home" href="/home">Home</Nav.Link>
       <Nav.Link as={Link} to="/agent" href="/agent">Agents</Nav.Link>
-      <Nav.Link as={Link} to="/quote" href="/quote">Quotes</Nav.Link>
+      <Nav.Link as={Link} to="/quotesHome" href="/quotesHome">Quotes</Nav.Link>
       <Nav.Link as={Link} to="/login" href="/login">Sign in</Nav.Link>
       <Nav.Link as={Link} to="/register" href="/register">Register</Nav.Link>
     </>

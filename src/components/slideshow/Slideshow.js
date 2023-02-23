@@ -16,7 +16,7 @@ function Slideshow(props) {
                         <p> Talk to a local agent near you or start a quote online.</p>
 
                         <Link to="/agent"> <Button>Find an Agent</Button></Link>
-                        <Link to="/quote"> <Button>Get Quote</Button></Link>
+                        <Link to="/quotesHome"> <Button>Get Quote</Button></Link>
                     </Col>
                     <Col md="auto" >
                         <Image className="d-block w-100 h-75 justify-content-md-center"

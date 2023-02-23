@@ -8,6 +8,7 @@ import Register from "./pages/register/Register";
 import UpdateUser from "./pages/updateUser/UpdateUser";
 import Agent from "./pages/agent/Agent";
 import Quote from "./pages/quote/Quote";
+import QuotesHome from "./pages/quotesHome/LandingPage";
 
 function App() {
   return (
@@ -47,6 +48,11 @@ function App() {
           exact
           path="/quote"
           component={Quote}
+        />
+        <Route
+          exact
+          path="/quotesHome"
+          component={QuotesHome}
         />
         <Route
           exact
