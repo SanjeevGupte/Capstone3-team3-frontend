@@ -95,12 +95,7 @@ class QuotePresent extends Component{
                     </Form.Row>
                 </Form>
                     
-                
-                
-                
-                <p>LOB: {lob}</p>
-                
-                
+              
                 
             </Container>
         )
