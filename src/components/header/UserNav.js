@@ -42,7 +42,7 @@ function UserNav(props) {
       <>
       <Nav.Link as={Link} to="/home" href="/home">Home</Nav.Link>
       <Nav.Link as={Link} to="/agent" href="/agent">Agents</Nav.Link>
-      <Nav.Link as={Link} to="/quote" href="/quote">Quotes</Nav.Link>
+      <Nav.Link as={Link} to="/quotesHome" href="/quotesHome">Quotes</Nav.Link>
         <Navbar.Text className="font-weight-bold mx-3">
           Hello, {props.auth.email}
         </Navbar.Text>

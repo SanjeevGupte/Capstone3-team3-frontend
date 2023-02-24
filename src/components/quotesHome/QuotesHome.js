@@ -15,7 +15,7 @@ function QuotesHome(props) {
 
                         <p> Fast , Reliable Quotes </p>
 
-                        <Link to="/quote"> <Button>Find an Quote</Button></Link>
+                        <Link to="/quotesFind"> <Button>Find a Quote</Button></Link>
                         <Link to="/quote"> <Button>Get Quote</Button></Link>
                     </Col>
                     <Col md="auto" >

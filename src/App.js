@@ -9,6 +9,7 @@ import UpdateUser from "./pages/updateUser/UpdateUser";
 import Agent from "./pages/agent/Agent";
 import Quote from "./pages/quote/Quote";
 import QuotesHome from "./pages/quotesHome/LandingPage";
+import QuotesFind from "./pages/quotesFind/QuoteFindPage";
 
 function App() {
   return (
@@ -53,6 +54,11 @@ function App() {
           exact
           path="/quotesHome"
           component={QuotesHome}
+        />
+        <Route
+          exact
+          path="/quotesFind"
+          component={QuotesFind}
         />
         <Route
           exact

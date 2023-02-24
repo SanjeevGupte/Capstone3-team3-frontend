@@ -12,6 +12,11 @@ class CustomAPIService {
         return this.client.get(`${this.url}/api/agents/${state}`);
     }
 
+    GetQuote(email) {
+        console.log ("Email :" + email)
+        return this.client.get(`${this.url}/api/quotes/${email}`);
+    }
+
     createQuote(quote) {
         console.log ("Creating Quote API Service")
         return this.client.post(`${this.url}/api/quotes`, quote);
