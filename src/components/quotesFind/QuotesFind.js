@@ -7,10 +7,12 @@ import React, { Component } from "react";
 
 import * as authActions from "../../redux/actions/customAPI";
 import APIService from "../../apiService";
-import GridCards from '../gridcards/GridCards';
+import GridCardsQuote from '../gridcardsquote/GridCardsQuote';
 
 
 export class QuotesFind extends Component {
+
+    
 
     constructor(props) {
         super(props);
@@ -48,10 +50,10 @@ export class QuotesFind extends Component {
 
     handleClick = (event) => {
         let formData = { ...this.state.formData };
-        console.log("In Handle Click Form Data " + formData);
+        console.log("In Handle Click Form Data " );
         formData[event.target.id] = event.target.value;
         this.setState({ formData });
-        console.log("handle change happening")
+        console.log("handle click happening")
         console.log("Value is : " + event.target.value)
         //This calls the API GetQuote with the state; The response has the data 
         this.client.GetQuote(event.target.value).then((response) => {
@@ -92,13 +94,13 @@ export class QuotesFind extends Component {
                         </Col>
                     </Row>
                     <Row className="justify-content-center">
-                    <Form.Group controlId="formEmail">
-                    <Form.Label className="label">Email Address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email id here " />
-                    </Form.Group>
+                        <Form.Group controlId="formEmail">
+                            <Form.Label className="label">Email Address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email id here " />
+                        </Form.Group>
                     </Row>
                     <Row className="justify-content-center">
-                    <Button variant="primary" onClick={this.handleClick}>Search</Button>
+                        <Button variant="primary" type="submit" icon="arrow-circle-right" onClick={this.handleClick}>Search</Button>
                     </Row>
                 </Jumbotron>
                 <Container className="jumbotron-fluid">
@@ -124,7 +126,7 @@ export class QuotesFind extends Component {
                     </Jumbotron>
 
                 </Container>
-                <GridCards dataFromParent = {this.state.agentData}/>
+                <GridCardsQuote dataFromParent={this.state.agentData} />
             </Container>
 
 
